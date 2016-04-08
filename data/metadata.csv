@@ -1,0 +1,15 @@
+site,site_flux,fluxnet,latitude,longitude,altitude,pos,start_date,site_years,ecoregion,WCAP,WP,region,letter,koppen,nr
+vaira,*,Us-Var,38.4133,-120.9506,129,4,2011-10-18,2,mediterranean california,407.5660095215,195.658996582,Mixed forest - coniferous forest - alpine meadow,e,Csa,1
+sedgwick,,,34.69685,-120.0484,381,4,2008-09-18,4,mediterranean california,407.5660095215,195.658996582,Mediterranean hardleaved evergreen forests,k,Csb,2
+freemangrass,,US-FR1,29.93,-98.01,243,3,2012-03-13,1,great plains,436.7470092773,253.4409942627,Shortgrass steppes,n,Cfa,3
+ibp,,,32.589,-106.847,1325,4,2013-05-10,1,north american deserts,351.4190063477,106.4739990234,Semideserts,m,Bsk,4
+konza,**,US-Kon,39.0824,-96.5603,443,2,2012-03-17,1,great plains,440.9339904785,181.56199646,Forest-steppes and prairies,f,Dfa,5
+lethbridge,*,CA-Let,49.7092,-112.9403,950,3,2011-10-26,2,great plains,422.5840148926,158.1620025635,Dry steppes,a,Dfb,6
+marena,,,36.06434,-97.21271,327,4,2012-06-12,1,great plains,378.3070068359,162.9519958496,Forest-steppes and prairies,j,Cfa,7
+uiefprairie,*,,40.063694,-88.197289,224,3,2008-10-20,4,eastern temperate forests,415.4769897461,186.7169952393,Forest-steppes and prairies,h,Dfa,8
+kendall,*,US-Wkg,31.73652,-109.94185,1291,1,2012-07-06,2,southern semiarid highlands,383.1849975586,130.9080047607,Semideserts,l,Bsk,9
+kansas,,US-KFS,39.0561,-95.1907,333,4,2012-03-17,1,great plains,409.950012207,184.796005249,Forest-steppes and prairies,g,Dfa,10
+butte,,,45.953,-112.4796,1682,2,2009-01-06,3,northwestern forested mountains,356.9039916992,160.8780059814,Steppe - coniferous forest - tundra,c,Dfb,11
+jasperridge,,US-Jas,37.402028,-122.22104,197,1,2012-02-29 ,3,mediterranean california,427.592010498,191.8950042725,Mediterranean hardleaved evergreen forests,i,Csa,12
+tonzi,,US-Kon,38.4309,-120.9659,177,3,,2,mediterranean california,401.6260070801,161.716003418,Mixed forest - coniferous forest - alpine meadow,d,Csb,13
+monture,,,47.020135,-113.128085,1254,2,,9,northwestern forested mountains,356.9039916992,160.8780059814,Steppe - coniferous forest - tundra,b,Dfb,14
