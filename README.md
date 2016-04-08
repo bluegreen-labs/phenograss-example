@@ -8,17 +8,17 @@ In particular this is a worked example which recreates Figure 1 of the journal a
 
 Either download the zipped project or clone the project using:
 
-  git clone https://github.com/khufkens/phenograss.git
+ git clone https://github.com/khufkens/phenograss.git
 
 Subsequently, run the Figure_1.r R script in the created directory:
 
 On Linux you can call this script directly using:
 
-  ./Figure_1.r
+ ./Figure_1.r
 
 On OSX you can source the file in the R environment:
 
-  source("Figure_1.r")
+ source("Figure_1.r")
 
 All model output and the generated PDF figure can be found in the output subdirectory within the root directory of the project. The result should look like the image below.
 
