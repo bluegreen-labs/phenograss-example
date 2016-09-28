@@ -30,4 +30,4 @@ All model output and the generated PDF figure can be found in the output subdire
 
 ### Notes:
 
-The code depends on a working gfortran compiler, which is freely available for all OS. However, you are on your own when it comes to rewriting the R code for Windows. The current code should run of the box on Linux and OSX
+The code depends on a working gfortran compiler, which is freely available for all OS. However, you are on your own when it comes to rewriting the R code for Windows. The current code should run out of the box on Linux and OSX
