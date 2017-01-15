@@ -1,0 +1,16 @@
+# install gfortran to run the model
+before_install:
+  - sudo apt-get install gfortran
+
+language: r
+r:
+  - release
+  - devel
+
+sudo: required
+
+warnings_are_errors: false
+
+# execute the R code
+script:
+  - R CMD BATCH Figure_1.r

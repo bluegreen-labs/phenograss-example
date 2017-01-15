@@ -13,6 +13,9 @@
 # LICENSE agreement. All modifications of this code should be accessible by me
 # and the public at large as stipulated under the Affero General Public License V3.
 
+# load libraries
+require(zoo)
+
 # compile and run the code
 system('gfortran -ffree-form -ffree-line-length-200 -g func.f90 inc.f90 phenograss.f90 main.f90 -o phenograss', wait = T)
 system('./phenograss ./parameters/sites.txt r',wait = T)
@@ -59,7 +62,7 @@ MAP = read.table("./output/MAP.txt")
 scaling_factor = (1 * MAP[1,]) / (MAP[1,] + slope)
 
 # padding to accomodate he inset scatter plot
-offset = 1095 
+offset = 2095 
 
 leg = c('a','b','c','d','e','f')
 phenocam_site_letter = c('g','c','j','m','f','d')
