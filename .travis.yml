@@ -11,6 +11,9 @@ sudo: required
 
 warnings_are_errors: false
 
+r_packages:
+  - zoo
+
 # execute the R code
 script:
   - R CMD BATCH Figure_1.r
