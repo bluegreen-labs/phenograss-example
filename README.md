@@ -11,9 +11,11 @@ Note that this work has been released under a [Affero Genaral Public License V3]
 In particular this is a worked example which recreates Figure 1 of the journal article. It therefore includes a subset of the original data and uses the parameters and model framework as used throughout the rest of the publication.
 
 Either download the zipped project or clone the project using:
+
 ```git
 git clone https://github.com/khufkens/phenograss.git
 ```
+
 Subsequently, run the Figure_1.r R script in the created directory:
 
 On Linux or OSX you can call this script directly using:
