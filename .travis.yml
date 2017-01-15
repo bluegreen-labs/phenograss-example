@@ -18,4 +18,4 @@ warnings_are_errors: false
 install:
   - Rscript -e 'install.packages("zoo")'
 script:
-  - Rscript -e Figure_1.r
+  - Rscript Figure_1.r
