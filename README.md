@@ -16,16 +16,12 @@ git clone https://github.com/khufkens/phenograss.git
 ```
 Subsequently, run the Figure_1.r R script in the created directory:
 
-On Linux you can call this script directly using:
+On Linux or OSX you can call this script directly using:
 
 ```bash
-./Figure_1.r
+Rscript Figure_1.r
 ```
 
-On OSX you can source the file in the R environment:
-```R
-source("Figure_1.r")
-```
 All model output and the generated PDF figure can be found in the output subdirectory within the root directory of the project. The result should look like the image below.
 
 ![](https://farm2.staticflickr.com/1524/26288199306_4b534c1202_o_d.png)
