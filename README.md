@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/khufkens/phenograss-example.svg?branch=master)](https://travis-ci.org/khufkens/phenograss-example)
+
 # PhenoGrass Model Example
 
 This is a working example of the PhenoGrass model as described in the Nature Climate Change paper: ["Productivity of North American grasslands is increased under future climate scenarios despite rising aridity"](http://www.nature.com/nclimate/journal/vaop/ncurrent/full/nclimate2942.html) by myself and co-authors.
