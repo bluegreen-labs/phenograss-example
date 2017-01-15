@@ -1,3 +1,5 @@
+sudo: required
+
 # install gfortran to run the model
 before_install:
   - sudo apt-get install gfortran
@@ -7,13 +9,13 @@ r:
   - release
   - devel
 
-sudo: required
+cache: packages
 
+# soft accept
 warnings_are_errors: false
 
-r_packages:
-  - zoo
-
 # execute the R code
+install:
+  - Rscript -e 'install.packages("zoo")'
 script:
-  - R CMD BATCH Figure_1.r
+  - Rscript -e Figure_1.r
