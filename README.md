@@ -8,7 +8,7 @@ Note that this work has been released under a [Affero Genaral Public License V3]
 
 ### Figure 1
 
-In particular this is a worked example which recreates Figure 1 of the journal article. It therefore includes a subset of the original data and uses the parameters and model framework as used throughout the rest of the publication.
+In particular this is a worked example which recreates Figure 1 of the journal article. It therefore includes a subset of the original data (due to size restrictions) and uses the parameters and model framework as used throughout the rest of the publication.
 
 Either download the zipped project or clone the project using:
 
