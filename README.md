@@ -46,7 +46,7 @@ Rscript Figure_1.r
 
 All model output and the generated PDF figure can be found in the output subdirectory within the root directory of the project. The result should look like the image below.
 
-![](https://farm2.staticflickr.com/1524/26288199306_4b534c1202_o_d.png)
+![](figure_1.png)
 
 ### Notes:
 
