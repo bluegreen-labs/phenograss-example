@@ -8,7 +8,7 @@ This is a working example of the PhenoGrass model as described in the Nature Cli
 
 Hufkens K., Keenan T. F., Flanagan L. B., Scott R. L., Bernacchi C. J., Joo E., Brunsell N. A., Verfaillie J. & Richardson A. D. (2016). Productivity of North American grasslands is increased under future climate scenarios despite rising aridity. Nature Climate Change, 6, 710 - 714.
 
-Note that this work has been released under a [Affero Genaral Public License V3](http://www.affero.org/) and any use of this code is therefore bound to this agreement. In particular this means that source code has to be open source and freely available to the public. The model as formulated here was built upon the framework by [Choler et al. 2010](http://www.biogeosciences.net/7/907/2010/). I'm indebted to the authors for this framework.
+Note that this work has been released under a [Affero General Public License V3](http://www.affero.org/) and any use of this code is therefore bound to this agreement. In particular this means that source code has to be open source and freely available to the public. The model as formulated here was built upon the framework by [Choler et al. 2010](http://www.biogeosciences.net/7/907/2010/). I'm indebted to the authors for this framework.
 
 ### Model parameters
 
