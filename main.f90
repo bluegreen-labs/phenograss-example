@@ -3,16 +3,25 @@
 
 program main
 
-  use, intrinsic :: iso_fortran_env			! load instrinsic subroutines to deal with i/o
-  use FUNC 				! load helper functions
-  use INC         ! setup of the model
-  use MODEL				! main model
+  use, intrinsic :: iso_fortran_env ! subroutines to deal with i/o
+  use FUNC 			    ! load helper functions
+  use INC                           ! setup of the model
+  use MODEL		            ! main model
+  use SANN
 
   implicit none
   character(len=10000) 	:: customfilename,tmpchar
   character(len=10000)	:: line
   CHARACTER(LEN=300)  	:: Format
-  call importData		       ! import data for all sites (if multiple)
+  call importData		    ! import data for all sites (if multiple)
+
+
+  ! optimize the parameters if requested, otherwise read the parameter
+  ! file and run the model using these parameters
+  if (optim == "o") then
+		! call the optimization routine
+		call SA(dataFile)
+  end if
 
   ! Read the optimized
   ! parameters for plotting
@@ -21,7 +30,7 @@ program main
   ! count the number of columns in a file
   open(unit=10,file=trim(adjustl(modPar)))
   !reading in data file
-  read(10,'(A)') line			 ! reads first line to determine # of columns
+  read(10,'(A)') line	   ! reads first line to determine # of columns
   nrParSet = ntokens(line) ! calculate how many columns are in the file
   close(10)
 
@@ -47,11 +56,12 @@ program main
     open(1,file=customfilename)
     do k=1,nrDataPoints
       write(tmpchar,"(I4)") nrsites
-      Format = "("//trim(adjustl(tmpchar))//"(1X,F7.6))"	! space delimited
+      Format = "("//trim(adjustl(tmpchar))//"(1X,F7.6))" ! space delimited
       write(1,Format) (dataFile(k,11,j), j=1,nrsites)
     end do
     close(1)
-
+   
+    ! clear all previous output from the dataFile array
     dataFile(:,11,:) = 0
 
   end do

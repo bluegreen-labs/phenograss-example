@@ -1,0 +1,20 @@
+#
+# Model parameter ranges
+#
+# commented (#) and blank lines are ignored on read
+# any data past the second column is ignored leaving room
+# for comments
+#
+#------------------------------------------------------------------
+# lower_limit	upper_limit		comments
+#------------------------------------------------------------------
+
+0 250		plant_inavailable_water_b1
+0 0.5		plant_growth_b2
+0 5		plant_decay_b3
+0 10 		water_loss_vegetation_b4
+0 30		growth_delay_b5
+1 50		min_photoperiod
+1 1000   	slope_100_1000_original
+0 45		Topt
+1 50		max_photoperiod

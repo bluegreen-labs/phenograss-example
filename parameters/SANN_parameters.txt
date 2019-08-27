@@ -1,0 +1,20 @@
+#
+# Simulated Annealing (SANN) parameters (in the listed order)
+#
+# All parameters are required (totalling 10)
+# commented (#) and blank lines are ignored on read
+# the second column of data is also ignored leaving room
+# for comments
+#------------------------------------------------------------------
+# parameter		comments
+#------------------------------------------------------------------
+100		        Temperature
+0.1			Error Tolerance (EPS)
+1			temperature reduction factor
+5			Nr. Cycles
+10			Nr. Itterations
+20000		        Maximum function evaluations
+1.0			Initial Step length
+2.0			Step length control parameter
+20000		        number of function evals before exiting routine
+5			Verbose output / can get messy - you are warned

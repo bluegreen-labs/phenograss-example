@@ -139,4 +139,83 @@ contains
 
   end subroutine fcover
 
+!------------------ COST FUNCTION -----------------
+
+subroutine cost(pars,dataFile,FIT)
+  implicit none
+  real					:: dataFile(:,:,:)
+  real 					:: pars(:)
+  real					:: siteError(size(dataFile,3))									
+  real					:: GCCtmp(size(dataFile,1))
+  real,intent(out) 		:: FIT
+  integer 				:: masksize, i, nrsites, nrPar, N
+  logical				:: mask(size(dataFile,1))
+  real, allocatable 	:: Xi(:), Yi(:), years(:)
+  real					:: a, b, scalingFactor
+  real					:: Xhat, Yhat, R2, SSres, SStot, MAE, yrmin,&
+							yrmax, nryr,RMSE
+  
+  N = size(pars)
+  nrsites = size(dataFile,3)
+  nrPar = N - nrsites
+  
+  do i=1,nrsites
+	call fcover(pars,dataFile,i)
+
+	! How many valid validation locations are there
+	masksize = sum(dataFile(:,3,i))
+		
+	! allocate space for this subset of validation data
+	allocate(Xi(masksize),Yi(masksize))
+	
+	! extract this data from the original dataset, create subset
+	mask=dataFile(:,3,i) == 1 
+	
+	! dump all data in a temporary matrix
+	GCCtmp = dataFile(:,4,i)	
+	
+	! after donohue et al.	else
+	scalingFactor = (1 * dataFile(1,14,i)) / (dataFile(1,14,i) + 245.478027)
+	
+	! subset GCC as validation set, and fCover values (V)
+	!obs = pack(GCCtmp,mask)
+	Xi = pack(GCCtmp,mask)
+	Yi = pack(dataFile(:,11,i),mask)
+	Xi = scalingFactor * Xi
+	years = pack(dataFile(:,1,i),mask)
+	yrmin = minval(years)
+	yrmax = maxval(years)
+	
+	if (yrmax == yrmin) then
+		nryr = 1
+	else
+		nryr = yrmax - yrmin
+	end if
+	
+	! calculate the means of observed and predicted
+	Xhat = sum(Xi)/size(Xi)
+	Yhat = sum(Yi)/size(Yi)
+	
+	! calculate sum of squares observed vs. mean / obs. vs. pred.
+	SStot = sum((Xi - Xhat)**2)
+	SSres = sum((Xi - Yi)**2)
+	RMSE = sqrt(SSres/size(Xi))
+
+	! calculate mean absolute error weighted by the mean of the series
+	! giving less weight to very pronounced series
+	MAE = (sum(abs(Xi - Yi)) / nryr ) / Xhat
+	siteError(i) = MAE
+
+	! clear formatting / memory allocation of the obs / pred values
+	! this is necessary as the size of the validation data can change
+	! between the sites
+	deallocate(Xi,Yi)
+    
+  end do
+  
+  ! average error values across the sites should be minimized
+  FIT = sum(siteError)/size(siteError)
+  
+end subroutine cost
+
 end module MODEL

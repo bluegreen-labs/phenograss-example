@@ -18,7 +18,8 @@ module INC
   real, allocatable     :: par(:,:)
   character(len=300)    :: modPar
   character(len=300)    :: modelrun
-
+  character(len=1)      :: optim
+  
   contains
   subroutine importData
   use FUNC
@@ -42,10 +43,49 @@ module INC
     call exit(0)
   else
     call get_command_argument(1, filepath)
+    call get_command_argument(2, optim)
     call LinesInFile(filepath,nrsites)
-		modelrun = "modelrun"
-		outdir="./output/"
-	  modPar = "./parameters/optimized_model_parameters.txt"
+	
+   ! The third argument is an index (string)
+   ! passed from the commandline to create
+   ! custom output formatting of all output
+   ! files (prefix)
+   if (argcount >= 3) then
+     call get_command_argument(3, fileindex)
+   end if			
+
+     ! read in custom parameter files. This should speed up processing
+     ! of processing the data for multiple parameter sets. This is mainly
+     ! here to facilitate validation and uncertainty calculations
+     if (argcount >= 4) then
+       call get_command_argument(4, modelrun)
+     else
+	! if not available revert to the default
+	modelrun = "modelrun"		
+     end if
+
+     ! read in custom output directory for model results
+     ! if output files are too big or you want to put them
+     ! elsewhere than the main directory
+     if (argcount >= 5) then
+	! feed in only one file to read, given
+	! by filepath
+	! nrsites = 1
+	call get_command_argument(5, outdir)
+     else
+	outdir="./output/"
+     end if
+
+     ! read in custom parameter files. This should speed up processing
+     ! of processing the data for multiple parameter sets. This is mainly
+     ! here to facilitate validation and uncertainty calculations
+     if (argcount >= 6) then
+	! set the parameter set file to a custom location
+	call get_command_argument(6, modPar)
+     else
+	! if not available revert to the default
+	modPar = "./parameters/optimized_model_parameters_default.txt"
+     end if
   end if
 
   ! allocate the array for the sites and paths to the data
