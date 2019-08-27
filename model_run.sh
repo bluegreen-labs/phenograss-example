@@ -34,8 +34,6 @@ gfortran -ffree-form \
  -g func.f90 inc.f90 phenograss.f90 sann.f90 main.f90 \
  -o phenograss
 
-echo $optimize
-
 # select routine
 if [ "$optimize" == "true" ];then
   # run the optimization routine
