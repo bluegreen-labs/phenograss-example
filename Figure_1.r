@@ -17,7 +17,7 @@
 require(zoo)
 
 # compile and run the code
-system('gfortran -ffree-form -ffree-line-length-200 -g func.f90 inc.f90 phenograss.f90 main.f90 -o phenograss', wait = T)
+system('gfortran -ffree-form -ffree-line-length-200 -g func.f90 inc.f90 phenograss.f90 sann.f90 main.f90 -o phenograss', wait = T)
 system('./phenograss ./parameters/sites.txt r',wait = T)
 
 # do a system call to see which sites to plot
