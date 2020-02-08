@@ -84,7 +84,7 @@ module INC
 	call get_command_argument(6, modPar)
      else
 	! if not available revert to the default
-	modPar = "./parameters/optimized_model_parameters_default.txt"
+	modPar = "./parameters/optimized_model_parameters.txt"
      end if
   end if
 
