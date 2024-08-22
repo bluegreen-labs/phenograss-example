@@ -23,7 +23,7 @@ jet.col.fcover = c(rev(ylorbr),ylgn)
 #---- load data ----
 
 fcover = raster("data/NCC_map_data/figure_2_fCover_change.tif")
-aridity = raster("data/NCC_map_data/figure2_aridity_index_change.tif")
+aridity = raster("data/NCC_map_data/figure_2_aridity_index_change.tif")
 
 #---- plot data ----
 
