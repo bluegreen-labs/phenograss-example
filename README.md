@@ -2,7 +2,7 @@
 
 This is a working example of the PhenoGrass model as described in the Nature Climate Change paper: ["Productivity of North American grasslands is increased under future climate scenarios despite rising aridity"](http://www.nature.com/nclimate/journal/vaop/ncurrent/full/nclimate2942.html) by myself and co-authors. When using this code (adapted or not) reference it as:
 
-Hufkens K., Keenan T. F., Flanagan L. B., Scott R. L., Bernacchi C. J., Joo E., Brunsell N. A., Verfaillie J. & Richardson A. D. (2016). Productivity of North American grasslands is increased under future climate scenarios despite rising aridity. Nature Climate Change, 6, 710 - 714.
+> Hufkens K., Keenan T. F., Flanagan L. B., Scott R. L., Bernacchi C. J., Joo E., Brunsell N. A., Verfaillie J. & Richardson A. D. (2016). Productivity of North American grasslands is increased under future climate scenarios despite rising aridity. Nature Climate Change, 6, 710 - 714.
 
 Note that this work has been released under a [Affero General Public License V3](http://www.affero.org/) and any use of this code is therefore bound to this agreement. In particular this means that source code has to be open source and freely available to the public. The model as formulated here was built upon the framework by [Choler et al. 2010](http://www.biogeosciences.net/7/907/2010/). I'm indebted to the authors for this framework.
 
@@ -46,4 +46,4 @@ All model output and the generated PDF figure can be found in the output subdire
 
 ### Notes:
 
-The code depends on a working gfortran compiler, which is freely available for all OS. However, you are on your own when it comes to rewriting the R code for Windows. The current code should run out of the box on Linux and OSX
+The code depends on a working gfortran compiler, which is freely available for all OS.
