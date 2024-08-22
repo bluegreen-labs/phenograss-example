@@ -54,7 +54,7 @@ precip[is.na(gcc_loc)] = NA
 fcover = read.table("./output/modelrun_01_fCover.txt")
 # limit model output to the range of the Gcc data
 # don't include spin-up
-fcover[is.na(gcc_loc)] = NA 
+fcover[is.na(gcc_loc)] = NA
 
 # scaling factor to be calculated from MAP and the
 # optimized slope parameter
@@ -62,7 +62,7 @@ MAP = read.table("./output/MAP.txt")
 scaling_factor = (1 * MAP[1,]) / (MAP[1,] + slope)
 
 # padding to accomodate he inset scatter plot
-offset = 2095 
+offset = 2095
 
 leg = c('a','b','c','d','e','f')
 phenocam_site_letter = c('g','c','j','m','f','d')
@@ -77,24 +77,24 @@ k=0
 
 for (i in site_order){
   k=k+1
-  
+
   # read data from original input file
   input_data = read.table(sites_data[i],skip=12)
-  
+
   # get modis data if available
   lat_long = scan(sites_data[i],what=character(),nmax=9)
   lat = as.numeric(lat_long[6])
   long = as.numeric(lat_long[9])
-  
+
   # construct dates string
   input_dates = as.Date(paste(input_data[,1],input_data[,2],sep="-"),format="%Y-%j")
-  
+
   # calculate spinput length
   spinup_length = input_dates[min(which(!is.na(gcc[,i]) == TRUE),na.rm=TRUE)]
-  
+
   # length of the time series
   ts_length = length(input_dates)
-  
+
   # plot container
   plot(input_dates,gcc[1:ts_length,i],
        bty='n',
@@ -105,15 +105,15 @@ for (i in site_order){
        ylim=c(0,1.3),
        xlim=c(as.numeric(input_dates[ts_length-offset]),as.numeric(input_dates[ts_length]))
   )
-  
+
   # format dates axis
   locs <- tapply(X=input_dates, FUN=min, INDEX=format(input_dates, '%Y%m'))
   at = input_dates %in% locs
-  at = at & format(input_dates, '%m') %in% c('01', '07') 
-  
+  at = at & format(input_dates, '%m') %in% c('01', '07')
+
   # call a new plot
   par(new=TRUE)
-  
+
   # plot the precipitation
   plot(input_dates,precip[1:ts_length,i],
        bty='n',
@@ -127,10 +127,10 @@ for (i in site_order){
        ylim=c(0,150)
   )
   axis(4,cex.axis=1.2,tck=0.03,las=2,col='deepskyblue',col.axis='deepskyblue',at=c(0,70,140),lwd=1.5)
-  
+
   # call a new plot to plot GCC/fcover
   par(new=TRUE)
-  
+
   # plot gcc
   plot(input_dates,gcc[1:ts_length,i] * scaling_factor[1,i],
        bty='n',
@@ -145,7 +145,7 @@ for (i in site_order){
        cex.lab=1.5,
        xlim=c(as.numeric(input_dates[ts_length-offset]),as.numeric(input_dates[ts_length]))
   )
-  
+
   # add fcover
   lines(input_dates,gcc[1:ts_length,i] * scaling_factor[1,i],
         bty='n',
@@ -157,7 +157,7 @@ for (i in site_order){
         lwd=2.3,
         cex.lab=1.3,
         xlim=c(as.numeric(input_dates[ts_length-offset]),as.numeric(input_dates[ts_length])))
-  
+
   # add fcover
   lines(input_dates,fcover[1:ts_length,i],
         ylim=c(0,1),
@@ -165,9 +165,9 @@ for (i in site_order){
         cex=0.2,
         lwd=2.3,
         col='red')
-  
+
   legend('topright',legend=leg[k],bty='n',cex=2.5)
-  
+
   # find location based upon name
   loc = which(metadata$site == sites[i])
 
@@ -176,18 +176,18 @@ for (i in site_order){
          bty='n',
          cex=1.5,
          bg='white')
-  
+
   # add nice axis
   if(i == 6){
     axis(side=1, at=seq(as.Date("2010/1/1"), as.Date("2015/1/1"), by = "year"),labels=F,tck=0.03,cex.axis=1.2,lwd=1.5)
     axis(side=1, at=seq(as.Date("2010/6/30"), as.Date("2015/6/30"), by = "year"),labels=2010:2015,tck=F,cex.axis=1.2,lwd=1.5)
   } else {
     axis(side=1, at=seq(as.Date("2010/1/1"), as.Date("2015/1/1"), by = "year"),labels=F,tck=0.03,cex=1.5,lwd=1.5)
-  }  
+  }
 
-  axis(2,at=c(0,0.5,1),cex.axis=1.2,tck=0.03,las=2,lwd=1.5) 
+  axis(2,at=c(0,0.5,1),cex.axis=1.2,tck=0.03,las=2,lwd=1.5)
   mtext("Precip. (mm)",4,3,cex=1,col='deepskyblue')
-  
+
 }
 
 # legend
@@ -204,7 +204,7 @@ bottom= rev(bottom[2:7])
 
 for (j in site_order){
   df = na.omit(cbind(gcc[,j] * scaling_factor[1,j],fcover[,j]))
-  
+
   k = k + 1
   par(fig=c(0.1,0.40,bottom[k],top[k]), new = TRUE)
   plot(df,
@@ -218,14 +218,14 @@ for (j in site_order){
        xlim=c(0,0.95),
        ylim=c(0,0.95)
   )
-  
+
   R = cor(df)[1,2]
-  
+
   rect(0,0,0.8,0.8,col = "white",border=0)
   points(df,
          pch=20,
          col='grey50')
-  
+
   # labels
   lines(c(0,0.8),c(0,0.8),lty=2)
   legend(-0.15,0.9,legend=paste("R = ",round(R,2),sep=''),bty='n',cex=1.3)
@@ -233,6 +233,6 @@ for (j in site_order){
   axis(2,at=c(0,0.4,0.8),tck=0.03,labels=c(0,'',0.8),cex.axis=1.3,lwd=1.5)
   mtext('Observed',1,2,cex=0.9)
   mtext('Predicted',2,2,cex=0.9)
-  
+
 }
 dev.off()
