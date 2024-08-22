@@ -8,3 +8,4 @@ a.out
 phenograss
 output/*.txt
 output/*.pdf
+data/NCC_map_data/*.xml
