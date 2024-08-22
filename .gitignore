@@ -6,3 +6,5 @@
 *.mod0
 a.out
 phenograss
+output/*.txt
+output/*.pdf
