@@ -1,4 +1,6 @@
-# PhenoGrass Model Example
+# PhenoGrass Model Example 
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13365191.svg)](https://doi.org/10.5281/zenodo.13365191)
 
 This is a working example of the PhenoGrass model as described in the Nature Climate Change paper: ["Productivity of North American grasslands is increased under future climate scenarios despite rising aridity"](https://doi.org/10.1038/nclimate2942) by myself and co-authors. When using this code (adapted or not) reference it as:
 
