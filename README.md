@@ -1,6 +1,6 @@
 # PhenoGrass Model Example
 
-This is a working example of the PhenoGrass model as described in the Nature Climate Change paper: ["Productivity of North American grasslands is increased under future climate scenarios despite rising aridity"](http://www.nature.com/nclimate/journal/vaop/ncurrent/full/nclimate2942.html) by myself and co-authors. When using this code (adapted or not) reference it as:
+This is a working example of the PhenoGrass model as described in the Nature Climate Change paper: ["Productivity of North American grasslands is increased under future climate scenarios despite rising aridity"](https://doi.org/10.1038/nclimate2942) by myself and co-authors. When using this code (adapted or not) reference it as:
 
 > Hufkens K., Keenan T. F., Flanagan L. B., Scott R. L., Bernacchi C. J., Joo E., Brunsell N. A., Verfaillie J. & Richardson A. D. (2016). Productivity of North American grasslands is increased under future climate scenarios despite rising aridity. Nature Climate Change, 6, 710 - 714.
 
